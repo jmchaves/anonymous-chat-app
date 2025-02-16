@@ -19,9 +19,6 @@ global.fetch = jest.fn(() =>
 
 // Mock useNavigate to avoid real navigation
 jest.mock('react-router-dom', () => ({
-  BrowserRouter: ({ children }) => <div>{children}</div>,
-  Route: ({ children }) => <div>{children}</div>,
-  Link: ({ children }) => <div>{children}</div>,
   useNavigate: () => jest.fn(),
   // Add other components or hooks as needed for your tests
 }));
@@ -77,9 +74,6 @@ describe("Home Component", () => {
   test("navigates to chat when 'Enter Chat' is clicked", async () => {
     const mockNavigate = jest.fn();
     jest.mock('react-router-dom', () => ({
-      BrowserRouter: ({ children }) => <div>{children}</div>,
-      Route: ({ children }) => <div>{children}</div>,
-      Link: ({ children }) => <div>{children}</div>,
       useNavigate: () => jest.fn(),
       // Add other components or hooks as needed for your tests
     }));
